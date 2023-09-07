@@ -1,0 +1,447 @@
+/**********************************************************
+  Reset Default Properties Start
+**********************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  /* Now 1rem = 1em = 10px */
+
+  overflow: hidden;
+}
+
+/**********************************************************
+  Reset Default Properties End
+**********************************************************/
+
+
+
+/**********************************************************
+  Variables Start
+**********************************************************/
+:root {
+
+  --black: #000;
+  --white: #fff;
+
+  --numberOfImgs: 6;
+
+  --indicator-color: transparent;
+  --indicator-active-color: #000;
+  --indicator-width: 1.5rem;
+  --indicator-active-width: 3rem;
+  --indicator-radius: 50%;
+  --indicator-active-radius: 8px;
+
+  --animation-duration: 15s;
+}
+
+/**********************************************************
+  Wrapper Start
+**********************************************************/
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(80deg, #09ee12, #211effeb);
+}
+
+
+/**********************************************************
+  Slider Container Start
+**********************************************************/
+.slider-container {
+  max-width: 800px;
+  width: 80%;
+  aspect-ratio: 1000/667;
+  overflow: hidden;
+  box-shadow: 30px 40px 40px #00000063;
+  /* border: 2rem solid rgba(255, 255, 255, 0.196); */
+  transition: all .3s linear;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.slider-container h1 {
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0);
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  transition: all .2s linear;
+  animation: scroll 8s linear infinite;
+}
+
+
+@media (hover:hover) {
+  .slider-container:hover>h1 {
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.103);
+  }
+}
+
+@keyframes scroll {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -150%;
+  }
+
+}
+
+
+/**********************************************************
+   Images Container Start
+**********************************************************/
+.images-container {
+  width: calc(100% * var(--numberOfImgs));
+  height: 100%;
+  display: flex;
+  animation: slide var(--animation-duration) linear infinite;
+  transition: all .4s linear;
+}
+
+
+@keyframes slide {
+  0% {
+    margin-left: 0;
+  }
+
+  15% {
+    margin-left: 0;
+  }
+
+  18% {
+    margin-left: -100%;
+
+  }
+
+  33% {
+    margin-left: -100%;
+  }
+
+  36% {
+    margin-left: -200%;
+
+  }
+
+  51% {
+    margin-left: -200%;
+  }
+
+  54% {
+    margin-left: -300%;
+
+  }
+
+  69% {
+    margin-left: -300%;
+
+  }
+
+  72% {
+    margin-left: -400%;
+
+  }
+
+  87% {
+    margin-left: -400%;
+  }
+
+
+  90% {
+    margin-left: -500%;
+  }
+
+  100% {
+    margin-left: -500%;
+
+  }
+}
+
+
+.images-container img {
+  width: calc(100% / var(--numberOfImgs));
+  height: 100%;
+}
+
+
+/**********************************************************
+   Indicators Start
+**********************************************************/
+.indicators {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.indicator {
+  width: var(--indicator-width);
+  height: 1.5rem;
+  border-radius: var(--indicator-radius);
+  border: 2px solid var(--indicator-active-color);
+  cursor: pointer;
+  transition: all .2s linear;
+  animation: active var(--animation-duration) linear infinite;
+}
+
+
+/**********************************************************
+   Keyframes for Indicator-1
+**********************************************************/
+.indicator-1 {
+  animation: indi1 var(--animation-duration) linear infinite;
+}
+
+@keyframes indi1 {
+  0% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  15% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  18% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+
+  }
+
+  90% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+
+  }
+
+  91% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  100% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+
+  }
+
+}
+
+
+/**********************************************************
+   Keyframes for Indicator-2
+**********************************************************/
+.indicator-2 {
+  animation: indi2 var(--animation-duration) linear infinite;
+}
+
+
+@keyframes indi2 {
+  0% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  15% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  18% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  33% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  36% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  100% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+}
+
+
+/**********************************************************
+   Keyframes for Indicator-3
+**********************************************************/
+.indicator-3 {
+  animation: indi3 var(--animation-duration) linear infinite;
+}
+
+
+@keyframes indi3 {
+  0% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  33% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  36% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+
+  }
+
+  51% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  54% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  100% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+}
+
+
+/**********************************************************
+   Keyframes for Indicator-4
+**********************************************************/
+.indicator-4 {
+  animation: indi4 var(--animation-duration) linear infinite;
+}
+
+
+@keyframes indi4 {
+  0% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+
+  51% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+
+  }
+
+  54% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  69% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+  }
+
+  72% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+
+  }
+
+
+  100% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+}
+
+/**********************************************************
+   Keyframes for Indicator-5
+**********************************************************/
+.indicator-5 {
+  animation: indi5 var(--animation-duration) linear infinite;
+}
+
+
+@keyframes indi5 {
+  0% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  69% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  72% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+
+  }
+
+  87% {
+    background-color: var(--indicator-active-color);
+    width: var(--indicator-active-width);
+    border-radius: var(--indicator-active-radius);
+
+  }
+
+  90% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+
+  100% {
+    background-color: var(--indicator-color);
+    width: var(--indicator-width);
+    border-radius: var(--indicator-radius);
+  }
+}
